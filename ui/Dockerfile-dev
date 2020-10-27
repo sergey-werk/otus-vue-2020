@@ -1,0 +1,23 @@
+# Dockerfile for vue-dev
+# docker build - --tag vue-cli:latest < Dockerfile-dev
+# docker run -it --rm -v "$PWD":/app -w /app  -e USER_ID=$(id -u) -e USER_GRP=$(id -g) -p 8000:8080 vue-cli:latest
+
+# https://mherman.org/blog/dockerizing-a-vue-app/
+
+FROM node:14-alpine
+RUN yarn global add @vue/cli \
+	@vue/cli-plugin-eslint \
+	@vue/cli-plugin-router \
+	@vue/cli-plugin-vuex \
+	@vue/cli-service-global \
+	@vue/test-utils \
+	eslint \
+	eslint-plugin-prettier \
+	eslint-plugin-vue \
+	lint-staged \
+	prettier \
+	vue-template-compiler \
+&& yarn cache clean
+
+CMD addgroup -g $USER_GRP appuser && adduser -u $USER_ID -G appuser -D appuser && su appuser || su node
+

@@ -1,0 +1,104 @@
+/* Custom styles that won't break the page layout. */
+
+.app-layout {
+  padding: 0 3%;
+  min-height: 100vh;
+  margin-top: 50px;
+}
+
+.app-layout.offline {
+  box-shadow: inset 0px 0px 10px 10px red;
+}
+
+#toptools {
+  border-bottom: 1px solid rgba(211, 211, 211, .3);
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100vw;
+  z-index: 9999;
+  top:0;
+  margin-left: -20px;
+}
+
+#topnav a.nav-link:hover {
+  border-bottom: 3px solid grey;
+  margin-bottom: -3px;
+}
+
+#topnav a.nav-link.router-link-active {
+  border-bottom: 3px solid red;
+  margin-bottom: -3px;
+}
+
+/* book-info style and responsiveness */
+.book-info {
+  max-width: 50em;
+}
+.book-info label {
+  margin-right: 1en;
+  color: lightslategray;
+}
+
+.book-info .book-cover img {
+  max-width: 100%;
+  user-select: none;
+}
+
+.book-info .book-field {
+  line-height: 0.8em;
+  margin: 1em;
+}
+
+.book-info .book-field label {
+  font-style: italic;
+  padding-right: 0.2em;
+}
+
+.book-info .book-field-value {
+  font-style: italic;
+  display: inline-block;
+}
+
+.book-info .book-isbn10 .book-field-value,
+.book-info .book-isbn13 .book-field-value{
+  min-width: 10rem;
+}
+
+.book-info .book-subtitle {
+  font-style: italic;
+}
+
+.book-info .book-price .book-field-value {
+  font-weight: bolder;
+}
+
+.books-card .card-header {
+  padding: 0;
+}
+
+.books-card .card-title a {
+  color: darkslategrey;
+  text-decoration: none;
+}
+
+.books-card.selected {
+  box-shadow: 0 4px 8px 0 lightslategrey;
+}
+
+.books-card.selected .card-header{
+  background-color: lightgray;
+}
+
+.books-card-img {
+  max-height: 350px;
+  object-fit: scale-down;
+}
+
+.books-card-rating {
+  background-color: transparent !important;
+}
+
+.books-card .card-body {
+  user-select: none;
+}
